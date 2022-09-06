@@ -1,0 +1,520 @@
+<!doctype html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Language" content="en">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>OEE</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
+        <meta name="description" content="This is an example dashboard created using build-in elements and components.">
+        <meta name="msapplication-tap-highlight" content="no">
+        <link href="./assets/main.css" rel="stylesheet">
+        <link rel="icon" type="image/png" href="./assets/icon.png" />
+        <script src="./assets/jquery-3.5.1.min.js"></script>
+        <script src="./assets/chart.min.js"></script>
+    </head>
+
+
+    <body  onload="aba1LoadGrafIndex(); fl1LoadGrafIndex()">
+
+        <div id="fullscreen" class="app-container app-theme-white body-tabs-shadow  closed-sidebar">
+            
+            <div class="app-main">
+
+                <div class="app-main__outer">
+                    <div class="app-main__inner" style="margin-bottom: 0%;">
+
+                        <div class="row" style="margin-top: -1%;">
+
+                            <div class="col-md-6 col-xl-6">
+                                <div class="mb-3" style="margin-right: 0%;">
+                                   
+
+                                    
+                                      <div class="row" style="margin-top: -1%;" >
+                                            <div class="col">
+                                                <div class="card mb-3 widget-content" style="margin: -1.3%; margin-bottom: -0%;">
+                                                    <div class="widget-content-outer" style="text-align: center; margin: -2%;">
+
+                                                    <b>ENVASADORA ABA</b>
+                                            
+                                                    </div>
+                                               </div>
+                                            </div>
+                                        </div>
+                                        
+
+
+
+                                        <div class="row" style="margin-top: -2.5%; ">
+
+
+                                            <div class="col-6">
+                                                <div class="card mb-3 widget-content" style="margin: -3%; background-color:  #70D33C;">
+                                                    <div class="widget-content-wrapper text-white" style="font-size: 80%; margin-bottom: -4%; margin-top: -4%;">
+                                                        <div class="widget-content-left">
+                                                            <div class="widget-heading">MAQUINA EN PRODUCCION</div>
+                                                        </div>
+                                                        <div class="widget-content-right">
+                                                            <div class="widget-numbers text-white" style="font-size: 150%;" >
+                                                                <div style="text-align: right;" id="aba1_Maq_Prod">0</div>
+                                                            </div>
+                                                            <div class="widget-subheading">Minutos</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+            
+
+                                            <div class="col-6 col-xl-6">
+                                                <div class="card mb-3 widget-content" style="margin: -3%; background-color:  #3342F0;">
+                                                    <div class="widget-content-wrapper text-white" style="font-size: 80%; margin-bottom: -4%; margin-top: -4%;">
+                                                    <div class="widget-content-left">
+                                                        <div class="widget-heading">LITROS ENVASADOS</div>
+                                                    </div>
+                                                    <div class="widget-content-right">
+                                                        <div class="widget-numbers text-white" style="font-size: 150%;" >
+                                                            <div style="text-align: right;" id="aba1_Lit_Env">0</div>
+                                                        </div>
+                                                        <div class="widget-subheading">Litros</div>
+                                                    </div>
+                                                </div> 
+                                            </div>
+                                            </div>
+
+                                        </div>
+
+
+
+                                        <div class="row" style="margin-top: -2.5%;" >
+
+
+
+            
+
+                                            <div class="col-6" >
+                                                <div class="card mb-3 widget-content" style="margin: -3%; background-color:  #E03434;">
+                                                <div class="widget-content-wrapper text-white" style="font-size: 80%; margin-bottom: -4%; margin-top: -4%;">
+                                                        <div class="widget-content-left">
+                                                            <div class="widget-heading">MAQUINA PARADA</div>
+                                                        </div>
+                                                        <div class="widget-content-right">
+                                                            <div class="widget-numbers text-white" style="font-size: 150%;" >
+                                                                <div style="text-align: right;" id="aba1_Maq_Par">0</div>
+                                                            </div>
+                                                            <div class="widget-subheading">Minutos</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-6" >
+                                                <div class="card mb-3 widget-content" style="margin: -3%; background-color:  #ffb20d;">
+                                                    <div class="widget-content-wrapper text-white" style="font-size: 80%; margin-bottom: -4%; margin-top: -4%;">
+                                                        <div class="widget-content-left">
+                                                            <div class="widget-heading">ENVASES PRODUCIDOS</div>
+                                                        </div>
+                                                        <div class="widget-content-right">
+                                                            <div class="widget-numbers text-white" style="font-size: 150%;" >
+                                                                <div style="text-align: right;" id="aba1_Env_Prod">0</div>
+                                                            </div>
+                                                            <div class="widget-subheading">Envases</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+
+
+
+                                        <div class="row" style="margin-top: -2.5%;">
+
+
+
+                                            <div class="col-6  col-xl-6" >
+                                                <div class="card mb-3 widget-content" style="margin: -3%; background-color:  #1D8BF9;">
+                                                    <div class="widget-content-wrapper text-white" style="font-size:80%; margin-bottom: -4%; margin-top: -4%;">
+                                                    <div class="widget-content-left" >
+                                                        <div class="widget-heading" >DISPONIBILIDAD DE MAQUINA</div>
+                                                    </div>
+                                                    <div class="widget-content-right">
+                                                        <div class="widget-numbers text-white" style="font-size: 150%;" >
+                                                            <div style="text-align: right;" id="aba1_Dis_Maq">0</div>
+                                                        </div>
+                                                        <div class="widget-subheading">Minutos</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            </div>
+
+
+            
+
+                                            <div class="col-6" >
+                                                <div class="card mb-3 widget-content" style="margin: -3%; background-color:  #815ce6;">
+                                                    <div class="widget-content-wrapper text-white" style="font-size: 80%; margin-bottom: -4%; margin-top: -4%;">
+                                                        <div class="widget-content-left">
+                                                            <div class="widget-heading">VELOCIDAD DE PRODUCCIÓN</div>
+                                                        </div>
+                                                        <div class="widget-content-right">
+                                                            <div class="widget-numbers text-white" style="font-size: 150%;" >
+                                                                <div style="text-align: right;" id="aba1_Vel_Prod">0.0</div>
+                                                            </div>
+                                                            <div class="widget-subheading">Env/Min</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row" style="margin-top: -2.5%;">
+
+
+                                            <div class="col-3" >
+                                                <div class="card mb-3 widget-content" style="margin: -7%; background-color:  #70D33C;" >
+                                                    <div class="widget-content-wrapper text-white" style="font-size: 80%; margin-bottom: -4%; margin-top: -4%;">
+                                                        <div class="widget-content-left">
+                                                            <div class="widget-heading">DISP.</div>
+                                                        </div>
+                                                        <div class="widget-content-right">
+                                                            <div class="widget-numbers text-white" style="font-size: 150%;" >
+                                                                <div style="text-align: right;"><a  id="aba1_Disp">0</a>%</div>
+                                                            </div>
+                                                            <div class="widget-subheading"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+            
+
+                                            <div class="col-3" >
+                                                <div class="card mb-3 widget-content" style="margin: -7%; background-color: #F7602C;">
+                                                    <div class="widget-content-wrapper text-white" style="font-size: 80%; margin-bottom: -4%; margin-top: -4%;">
+                                                        <div class="widget-content-left">
+                                                            <div class="widget-heading">REND.</div>
+                                                        </div>
+                                                        <div class="widget-content-right">
+                                                            <div class="widget-numbers text-white" style="font-size: 150%;" >
+                                                                <div style="text-align: right;"><a id="aba1_Rend">0</a>%</div>
+                                                            </div>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-3" >
+                                                <div class="card mb-3 widget-content" style="margin: -7%; background-color: #E6E307;">
+                                                    <div class="widget-content-wrapper text-white" style="font-size: 80%; margin-bottom: -4%; margin-top: -4%;">
+                                                        <div class="widget-content-left">
+                                                            <div class="widget-heading">CAL.</div>
+                                                        </div>
+                                                        <div class="widget-content-right">
+                                                            <div class="widget-numbers text-white" style="font-size: 150%;" >
+                                                                <div style="text-align: right;" ><a id="aba1_Cali">0</a>%</div>
+                                                            </div>
+                                                           
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+            
+
+                                            <div class="col-3" >
+                                                <div class="card mb-3 widget-content" style="margin: -7%; background-color: #1D8BF9 ;">
+                                                    <div class="widget-content-wrapper text-white" style="font-size: 80%; margin-bottom: -4%; margin-top: -4%;">
+                                                        <div class="widget-content-left">
+                                                            <div class="widget-heading">OEE</div>
+                                                        </div>
+                                                        <div class="widget-content-right">
+                                                            <div class="widget-numbers text-white" style="font-size: 150%;" >
+                                                                <div style="text-align: right;" ><a id="aba1_OEE">0</a>%</div>
+                                                            </div>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                     
+
+
+                                        <div class="col">
+                                            
+                                            <div class=" mb-3" style="margin:-3%; margin-top: -4%;">
+                                                    <canvas id="aba1_GRF_INDEX03" height="80%"></canvas>
+                                            </div>
+
+                                            <div class=" mb-3" style="margin:-3%; margin-top: -3%;">
+                                                    <canvas id="aba1_GRF_INDEX01" height="80%"></canvas>
+                                            </div>
+            
+                                            <div class=" mb-3" style="margin:-3%; margin-top: -3%">
+                                                    <canvas id="aba1_GRF_INDEX02" height="80%"></canvas>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-md-6 col-xl-6">
+                                <div class="mb-3" style="margin-right: 0%;">
+                                   
+                            
+                                    
+                                      <div class="row" style="margin-top: -1%;" >
+                                            <div class="col">
+                                                <div class="card mb-3 widget-content" style="margin: -1.3%; margin-bottom: -0%;">
+                                                    <div class="widget-content-outer" style="text-align: center; margin: -2%;">
+                            
+                                                    <b>ENVASADORA FLASH</b>
+                                            
+                                                    </div>
+                                               </div>
+                                            </div>
+                                        </div>
+                                        
+                            
+                            
+                            
+                                        <div class="row" style="margin-top: -2.5%; ">
+                            
+                            
+                                            <div class="col-6">
+                                                <div class="card mb-3 widget-content" style="margin: -3%; background-color:  #70D33C;">
+                                                    <div class="widget-content-wrapper text-white" style="font-size: 80%; margin-bottom: -4%; margin-top: -4%;">
+                                                        <div class="widget-content-left">
+                                                            <div class="widget-heading">MAQUINA EN PRODUCCION</div>
+                                                        </div>
+                                                        <div class="widget-content-right">
+                                                            <div class="widget-numbers text-white" style="font-size: 150%;" >
+                                                                <div style="text-align: right;" id="fl1_Maq_Prod">0</div>
+                                                            </div>
+                                                            <div class="widget-subheading">Minutos</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                            
+                            
+                                            <div class="col-6 col-xl-6">
+                                                <div class="card mb-3 widget-content" style="margin: -3%; background-color:  #3342F0;">
+                                                    <div class="widget-content-wrapper text-white" style="font-size: 80%; margin-bottom: -4%; margin-top: -4%;">
+                                                    <div class="widget-content-left">
+                                                        <div class="widget-heading">LITROS ENVASADOS</div>
+                                                    </div>
+                                                    <div class="widget-content-right">
+                                                        <div class="widget-numbers text-white" style="font-size: 150%;" >
+                                                            <div style="text-align: right;" id="fl1_Lit_Env">0</div>
+                                                        </div>
+                                                        <div class="widget-subheading">Litros</div>
+                                                    </div>
+                                                </div> 
+                                            </div>
+                                            </div>
+                            
+                                        </div>
+                            
+                            
+                            
+                                        <div class="row" style="margin-top: -2.5%; ">
+                            
+                            
+                            
+                            
+                            
+                                            <div class="col-6" >
+                                                <div class="card mb-3 widget-content" style="margin: -3%; background-color:  #E03434;">
+                                                <div class="widget-content-wrapper text-white" style="font-size: 80%; margin-bottom: -4%; margin-top: -4%;">
+                                                        <div class="widget-content-left">
+                                                            <div class="widget-heading">MAQUINA PARADA</div>
+                                                        </div>
+                                                        <div class="widget-content-right">
+                                                            <div class="widget-numbers text-white" style="font-size: 150%;" >
+                                                                <div style="text-align: right;" id="fl1_Maq_Par">0</div>
+                                                            </div>
+                                                            <div class="widget-subheading">Minutos</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                            
+                                            <div class="col-6" >
+                                                <div class="card mb-3 widget-content" style="margin: -3%; background-color:  #ffb20d;">
+                                                    <div class="widget-content-wrapper text-white" style="font-size: 80%; margin-bottom: -4%; margin-top: -4%;">
+                                                        <div class="widget-content-left">
+                                                            <div class="widget-heading">ENVASES PRODUCIDOS</div>
+                                                        </div>
+                                                        <div class="widget-content-right">
+                                                            <div class="widget-numbers text-white" style="font-size: 150%;" >
+                                                                <div style="text-align: right;" id="fl1_Env_Prod">0</div>
+                                                            </div>
+                                                            <div class="widget-subheading">Envases</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                            
+                            
+                                        </div>
+                            
+                            
+                            
+                                        <div class="row" style="margin-top: -2.5%; ">
+                            
+                            
+                            
+                                            <div class="col-6  col-xl-6" >
+                                                <div class="card mb-3 widget-content" style="margin: -3%; background-color:  #1D8BF9;">
+                                                    <div class="widget-content-wrapper text-white" style="font-size:80%; margin-bottom: -4%; margin-top: -4%;">
+                                                    <div class="widget-content-left" >
+                                                        <div class="widget-heading" >DISPONIBILIDAD DE MAQUINA</div>
+                                                    </div>
+                                                    <div class="widget-content-right">
+                                                        <div class="widget-numbers text-white" style="font-size: 150%;" >
+                                                            <div style="text-align: right;" id="fl1_Dis_Maq">0</div>
+                                                        </div>
+                                                        <div class="widget-subheading">Minutos</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            </div>
+                            
+                            
+                            
+                            
+                                            <div class="col-6" >
+                                                <div class="card mb-3 widget-content" style="margin: -3%; background-color:  #815ce6;">
+                                                    <div class="widget-content-wrapper text-white" style="font-size: 80%; margin-bottom: -4%; margin-top: -4%;">
+                                                        <div class="widget-content-left">
+                                                            <div class="widget-heading">VELOCIDAD DE PRODUCCIÓN</div>
+                                                        </div>
+                                                        <div class="widget-content-right">
+                                                            <div class="widget-numbers text-white" style="font-size: 150%;" >
+                                                                <div style="text-align: right;" id="fl1_Vel_Prod">0.0</div>
+                                                            </div>
+                                                            <div class="widget-subheading">Env/Min</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                            
+                                        <div class="row" style="margin-top: -2.5%; ">
+                            
+                            
+                                            <div class="col-3" >
+                                                <div class="card mb-3 widget-content" style="margin: -7%; background-color:  #70D33C;" >
+                                                    <div class="widget-content-wrapper text-white" style="font-size: 80%; margin-bottom: -4%; margin-top: -4%;">
+                                                        <div class="widget-content-left">
+                                                            <div class="widget-heading">DISP.</div>
+                                                        </div>
+                                                        <div class="widget-content-right">
+                                                            <div class="widget-numbers text-white" style="font-size: 150%;" >
+                                                                <div style="text-align: right;"><a  id="fl1_Disp">0</a>%</div>
+                                                            </div>
+                                                            <div class="widget-subheading"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                            
+                            
+                                            <div class="col-3" >
+                                                <div class="card mb-3 widget-content" style="margin: -7%; background-color: #F7602C;">
+                                                    <div class="widget-content-wrapper text-white" style="font-size: 80%; margin-bottom: -4%; margin-top: -4%;">
+                                                        <div class="widget-content-left">
+                                                            <div class="widget-heading">REND.</div>
+                                                        </div>
+                                                        <div class="widget-content-right">
+                                                            <div class="widget-numbers text-white" style="font-size: 150%;" >
+                                                                <div style="text-align: right;"><a id="fl1_Rend">0</a>%</div>
+                                                            </div>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                            
+                                            <div class="col-3" >
+                                                <div class="card mb-3 widget-content" style="margin: -7%; background-color: #E6E307;">
+                                                    <div class="widget-content-wrapper text-white" style="font-size: 80%; margin-bottom: -4%; margin-top: -4%;">
+                                                        <div class="widget-content-left">
+                                                            <div class="widget-heading">CAL.</div>
+                                                        </div>
+                                                        <div class="widget-content-right">
+                                                            <div class="widget-numbers text-white" style="font-size: 150%;" >
+                                                                <div style="text-align: right;" ><a id="fl1_Cali">0</a>%</div>
+                                                            </div>
+                                                           
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                            
+                            
+                                            <div class="col-3" >
+                                                <div class="card mb-3 widget-content" style="margin: -7%; background-color: #1D8BF9 ;">
+                                                    <div class="widget-content-wrapper text-white" style="font-size: 80%; margin-bottom: -4%; margin-top: -4%;">
+                                                        <div class="widget-content-left">
+                                                            <div class="widget-heading">OEE</div>
+                                                        </div>
+                                                        <div class="widget-content-right">
+                                                            <div class="widget-numbers text-white" style="font-size: 150%;" >
+                                                                <div style="text-align: right;" ><a id="fl1_OEE">0</a>%</div>
+                                                            </div>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                            
+                                     
+                            
+                            
+                                        <div class="col">
+                                            
+                                            <div class=" mb-3" style="margin:-3%; margin-top: -4%;">
+                                                    <canvas id="fl1_GRF_INDEX03" height="80%"></canvas>
+                                            </div>
+                            
+                                            <div class=" mb-3" style="margin:-3%; margin-top: -3%;">
+                                                    <canvas id="fl1_GRF_INDEX01" height="80%"></canvas>
+                                            </div>
+                            
+                                            <div class=" mb-3" style="margin:-3%; margin-top: -3%">
+                                                    <canvas id="fl1_GRF_INDEX02" height="80%"></canvas>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+        </div>
+        </div>
+
+
+
+
+    <script type="text/javascript" src="./assets/aba1.js"></script>
+    <script type="text/javascript" src="./assets/fl1.js"></script>
+
+    </body>
+
+
+</html>
